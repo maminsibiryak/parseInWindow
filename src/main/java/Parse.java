@@ -45,7 +45,8 @@ public class Parse {
      */
     private void initialize() {
         frame = new JFrame();
-        frame.setBounds(100, 100, 600, 800);
+
+        frame.setBounds(100, 100, 800, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel();
@@ -67,9 +68,8 @@ public class Parse {
                     textArea.setText(String.valueOf(printCinema(page)));
                 } catch (IOException e) {
                     e.printStackTrace();
+                    textArea.setText("Error. No Internet connection");
                 }
-
-
 
 
             }
@@ -85,16 +85,25 @@ public class Parse {
                     textArea.setText(String.valueOf(ParseRSM.printRSM(page)));
                 } catch (IOException e1) {
                     e1.printStackTrace();
+                    textArea.setText("Error. No Internet connection");
                 }
 
             }
         });
         panel.add(btnNewButton_1);
 
-        JButton btnNewButton_2 = new JButton("New button");
+        JButton btnNewButton_2 = new JButton("Hot Pikabu");
         btnNewButton_2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                textField.setText("11111");
+                try {
+                    Document page = HotPikabu.getPage();
+
+                    textArea.setText(String.valueOf(HotPikabu.getPost(page)));
+
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                    textArea.setText("Error. No Internet connection");
+                }
 
             }
         });

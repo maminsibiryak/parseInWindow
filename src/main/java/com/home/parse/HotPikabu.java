@@ -34,15 +34,14 @@ public class HotPikabu {
             hashMap.put(storieRank.text()+"|"+storiesHeader.text(), stroiesLink.attr("href"));
         }*/
 
-        for (int i = 0; i<20; i++) {
+        for (int i = 0; i < 20; i++) {
             Element storieRank = divStories.select("div[class=story__rating-count").get(i);
             Element storiesHeader = divStories.select("div[class=story__header-title]").get(i);
             Elements stroiesLink = storiesHeader.select("a[class=story__title-link ]");
 
 
-            hashMap.put(storieRank.text()+"|"+storiesHeader.text(), stroiesLink.attr("href")+"\n");
+            hashMap.put(storieRank.text() + "|" + storiesHeader.text(), stroiesLink.attr("href") + "\n");
         }
-
 
 
         return hashMap;

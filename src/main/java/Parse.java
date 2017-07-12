@@ -92,7 +92,7 @@ public class Parse {
         });
         panel.add(btnNewButton_1);
 
-        JButton btnNewButton_2 = new JButton("Hot Pikabu");
+        JButton btnNewButton_2 = new JButton("HotPikabu");
         btnNewButton_2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
